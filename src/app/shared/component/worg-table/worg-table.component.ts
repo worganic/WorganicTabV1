@@ -11,19 +11,22 @@ import { SpinnerComponent } from 'src/app/shared/component/elements/spinner/spin
 
 // Interface : liste des elements d'une colonne de table :
 export interface Listecolumn {
-  column: string;// Nom de la colonne dans les datas.
-  columnTitle: string;// Nom de la colonne affiché.
-  type: string;// Type d'infos : [number/string/boolean].
-  columnHidden: boolean;// Colonne non affiché (hidden).
-  filter: boolean;// Filtre de la colonne [true/false].
-  filterType: string; // Filtre : type : [text/select].
-  filterSelectData: any;// Filtre : liste des données du select.
-  filterSelectDefault: string;// Filtre : donnée par default.
-  filterSelectVide: string;// Filtre : donnée par default si données vide.
-  edit: boolean;// Edition de la colonne.
-  editType: string;
+  column: string;               // Nom de la colonne dans les datas.
+  columnTitle: string;          // Nom de la colonne affiché.
+  type: string;                 // Type d'infos : [number/string/boolean].
+  columnHidden: boolean;        // Colonne non affiché (hidden).
+  filter: boolean;              // Filtre de la colonne [true/false].
+  filterType: string;           // Filtre : type : [text/select].
+  filterSelectData: any;        // Filtre : liste des données du select.
+  filterSelectDefault: string;  // Filtre : donnée par default.
+  filterSelectVide: string;     // Filtre : donnée par default si données vide.
+  edit: boolean;                // Edition de la colonne.
+  editType: string;             //
 }
 
+/**
+ * ModelExport
+ */
 export interface ModelExport {
   element: any,
   action: string,
@@ -160,11 +163,14 @@ export class WorgTableComponent implements OnInit {
 
   /**
    * startTimer
+   * 
+   * @param time1
    */
   startTimer(time1: number = this.timeLeft) {
     this.time = time1;
     //console.log("WorgTableComponent | startTimer / this.time", this.time);
     this.recupData();
+
     if (this.tableTimer) {
       this.interval = setInterval(() => {
         //console.log("WorgTableComponent | startTimer /setInterval / this.time", this.time);
@@ -227,36 +233,21 @@ export class WorgTableComponent implements OnInit {
     if (!isEqual) {// Si les données ont évolué :
       //console.log("WorgTableComponent | majData / res : ", res);
 
-
+      // 
       for (let i in res) {
-        //console.log(res[i]);
         for (let ii in res[i]) {
-          //console.log("---", ii);
-          //console.log("---", res[i][ii]);
-          // console.log(typeof(res[i][ii]));
           if (typeof (res[i][ii]) == 'object') {
-            //console.log('***********************');
-            //console.log("---------ii : ", ii);
-            //console.log("---------res[i][ii] : ", res[i][ii]);
-            //res[i][ii] = res[i][ii];
             for (let iii in res[i][ii]) {
-
-
               if (typeof (res[i][ii][iii]) == 'object') {
-                //console.log("--------->>>>>", iii);
-                //console.log("--------->>>>>", res[i][ii][iii]);
                 for (let iiii in res[i][ii][iii]) {
                   res[i][ii + '_' + iii + '_' + iiii] = res[i][ii][iii][iiii];
                 }
               } else {
-                //console.log("--------->>>>>iii", iii);
-                //console.log("--------->>>>>res[i][ii][iii]", res[i][ii][iii]);
                 res[i][ii + '_' + iii] = res[i][ii][iii];
               }
             }
           }
         }
-        // console.log('--------------------------------------');
       }
 
       console.log("WorgTableComponent | majData / res : ", res);
@@ -266,9 +257,8 @@ export class WorgTableComponent implements OnInit {
       if (this.expandabledOr) {
         // Récupération de la liste des éléments à vérifier pour l'expandable :
         var tt: any = this.expandableIf;
-         console.log("WorgTableComponent | majData / expandable / tt : ", tt);
+        console.log("WorgTableComponent | majData / expandable / tt : ", tt);
         if (tt) {
-
 
           var exp: Boolean = false;// False par defaut.
           // On parcour des datas :
@@ -276,58 +266,32 @@ export class WorgTableComponent implements OnInit {
             exp = false;
             // On parcour les éléments.
             for (var index in tt) {
-
-
-              // console.log("WorgTableComponent | majData / expandable / tt[index] : ", tt[index]);
-              // console.log("WorgTableComponent | majData / expandable / res[i][tt[index]] : ", res[i][tt[index]]);
-
-
               // On vérifie si l'élément ou non doit activé l'expandable.
               if (res[i] && res[i][tt[index]] && res[i][tt[index]] != null && res[i][tt[index]] != 'null') {
-                //console.log("WorgTableComponent | majData / expandable / res[i]['id'] : ", res[i]['id']);
-                //console.log("WorgTableComponent | majData / expandable / res[i] : ", res[i]);
-                //console.log("WorgTableComponent | majData / expandable / res[i][tt[index]] : ", res[i][tt[index]]);
-
                 exp = true;// Expandable activé
                 this.optionsPlus[res[i]['id']] = exp;
                 break;
               }
             }
-            //if(res[i])this.optionsPlus[res[i]['id']] = exp;
-           // console.log("WorgTableComponent | majData / expandable / ----------------------------------");
-
           }
-
         }
       }
 
-
-     // console.log("WorgTableComponent | majData / expandable / this.optionsPlus : ", this.optionsPlus);
-     // console.log("WorgTableComponent | majData / expandable / res : ", res);
-
-
       this.viewData = this.DATATAB = res;
       this.elementTotal = this.viewData.length;// Nombre d'élément total.
-
-
-
 
       //console.log("WorgTableComponent | majData / subscribe / res :", res);
       this.infoActualisation = true;
       this.startTimerInfo();
 
-
       // Mise à jour des Filtre select :
       this.selectDataMaj();
-
 
       // Vérication si les filtres sont utilisé :
       this.filterKeyEvent();
 
-
       // Récupération du nombre d'élément à affiché :
       this.viewDataLenght = this.viewData.length;
-
 
     } else {// Les données récupéré sont identique (aucune maj necessaire) :
       //console.log("WorgTableComponent | majData / subscribe / Pas de de MAJ");
@@ -335,14 +299,12 @@ export class WorgTableComponent implements OnInit {
     }
   }
 
-
-  formData$: Observable<any> | undefined;
-
-
   /**
    * selectDataMaj
+   * 
    * Création et mis en place des filtres select :
    */
+  formData$: Observable<any> | undefined;
   selectDataMaj() {
     // Mise en place des données dans les filtres select :
     const group: any = {};
@@ -362,23 +324,15 @@ export class WorgTableComponent implements OnInit {
     });
   }
 
-
   /**
    * getSelectList
    *
    * @returns
    */
   getSelectList(): Observable<any> {
-    //console.log("WorgTableComponent | getSelectList / this.Listecolumns :", this.Listecolumns);
-    //console.log("WorgTableComponent | getSelectList / this.ELEMENT_DATA :", this.ELEMENT_DATA);
-
-
     let element: any = [];
     // Boucle sur la liste des colonnes :
     Object.entries(this.Listecolumns).forEach(([key, value], index) => {
-      //console.log("WorgTableComponent | getSelectList / Object / value :", value);
-
-
       // Mise en place des datas pour les seleted :
       if (value.filterType == 'select') {//&& value.filterSelectData == null
         if (value.filterSelectData == null) {
@@ -386,7 +340,6 @@ export class WorgTableComponent implements OnInit {
 
           // Récupération des datas parmis les datas encore affiché :
           Object.entries(this.ELEMENT_DATA).forEach(([key1, value1], index1) => {
-            //console.log("WorgTableComponent | getSelectList / Object / value1[value.column] :", value1[value.column]);
             if (listData.includes(value1[value.column]) == false) listData.push(value1[value.column]);
           });
           var sortedArray: number[] = listData.sort((n1: any, n2: any) => n1 - n2);
@@ -397,7 +350,6 @@ export class WorgTableComponent implements OnInit {
         }
       }
     });
-    //console.log("WorgTableComponent | getSelectList / Object / element :", element);
     return of(element);
   }
 
@@ -408,7 +360,6 @@ export class WorgTableComponent implements OnInit {
    *
    * ELEMENT_DATA
    */
-
   ngOnChanges() {
     console.log("WorgTableComponent | ngOnChanges");
 
@@ -476,7 +427,6 @@ export class WorgTableComponent implements OnInit {
     }
   }
 
-
   /**
    * findHiddenFalse : Pipe d'affichage ou non des colonnes (option/colonne/columnHidden).
    * @param list Pip
@@ -496,8 +446,6 @@ export class WorgTableComponent implements OnInit {
    */
   filterKeyEvent() {
     var testFilter = this.ELEMENT_DATA;
-
-
     // Récupération des infos des filtres :
     // console.log("WorgTableComponent | filterKeyEvent / this.form.value :", this.form.value);
     // console.log("WorgTableComponent | filterKeyEvent / this.Listecolumns :", this.Listecolumns);
@@ -554,9 +502,8 @@ export class WorgTableComponent implements OnInit {
     //console.log("WorgTableComponent | filterKeyEvent / testFilter :", testFilter);
   }
 
-
   /**
-   *
+   * onPageChange
    */
   onPageChange(page: number): void {
     this.currentPage = page;
@@ -597,7 +544,6 @@ export class WorgTableComponent implements OnInit {
     console.log('WorgTableComponent | buttonFct / action : ', action);
     console.log('WorgTableComponent | buttonFct / element : ', element);
     console.log('WorgTableComponent | buttonFct / column : ', column);
-
 
     var fin = false;
 

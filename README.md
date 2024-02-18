@@ -19,9 +19,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Get clone 
-> https://github.com/worganic/TutoTab-St24-tableEditPersonnalise.git
+> https://github.com/worganic/WorganicTabV1.git
 > npm install
-> cd .\worganic-tab-v24\
+> cd .\worganic-tab-v25\
 > ng serve
 
 ## Project :
@@ -93,7 +93,7 @@ v25 - Tableau -> heritage
 
 ## Historique :
 Avant -> v24 - Tableau -> edit - personnalise
-Après -> v26 - 
+Après -> v26 - ...
 
 ## Ressource :
     -
