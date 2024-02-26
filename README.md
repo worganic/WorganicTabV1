@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
+## Date :
+    Début : 2024-01
+    Fin : 2024-02-26
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -85,7 +88,7 @@ v25 - Tableau -> heritage
 
 
 ## Problème à résoudre :
-    Petit default sur le design, comme d'hab...
+    Petit default sur le design...
 
 ## Infos plus :
    
@@ -98,6 +101,11 @@ Après -> v26 - ...
 ## Ressource :
     -
 
+##  A mettre en place :
+    - 2024-02-26 | Mise en place d'une option tri par colonne.
+    - 2024-02-26 | Option d'une colonne pas default pour l'expandable (avec icone).
+    - 2024-02-26 | Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
+    - ...
 
 ## Abouts
 created by Johann Loreau
