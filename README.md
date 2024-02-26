@@ -131,6 +131,7 @@ v25 - Tableau -> heritage
 
 ## Problème à résoudre :
     Petit default sur le design...
+    - 2024-02-26 -> expandable col option : vérifié si elle s'affiche ou non lorsqu'on n'en à pas besoin (data = vide) :  optionsPlus[element['id']] ? ... : false"
 
 ## Infos plus :
    
