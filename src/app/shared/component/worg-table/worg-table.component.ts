@@ -255,6 +255,7 @@ export class WorgTableComponent implements OnInit {
 
       // Mise en place de l'expandable :
       if (this.expandabledOr) {
+
         // Récupération de la liste des éléments à vérifier pour l'expandable :
         var tt: any = this.expandableIf;
         console.log("WorgTableComponent | majData / expandable / tt : ", tt);
@@ -263,13 +264,11 @@ export class WorgTableComponent implements OnInit {
           var exp: Boolean = false;// False par defaut.
           // On parcour des datas :
           for (var i = 0; i <= res.length; i++) {
-            exp = false;
             // On parcour les éléments.
             for (var index in tt) {
               // On vérifie si l'élément ou non doit activé l'expandable.
               if (res[i] && res[i][tt[index]] && res[i][tt[index]] != null && res[i][tt[index]] != 'null') {
-                exp = true;// Expandable activé
-                this.optionsPlus[res[i]['id']] = exp;
+                this.optionsPlus[res[i]['id']] = true;// Expandable activé
                 break;
               }
             }
@@ -403,6 +402,7 @@ export class WorgTableComponent implements OnInit {
       if (this.expandableIf && this.expandableIf.length > 0) this.expandableIfBo = true;
       this.expandableCol      = option['options']['expandableCol'];
       this.expandableColIco   = option['options']['expandableColIco'];
+console.log("WorgTableComponent | ngOnChanges / this.expandableColIco : ", this.expandableColIco);
 
       this.optionAdd          = option['options']['dataAdd'];
       this.dataEdit           = option['options']['dataEdit'];

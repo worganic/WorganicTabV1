@@ -89,6 +89,45 @@ v25 - Tableau -> heritage
             src\app\component\pipeListe.ts
         PS: je laisse le fichier exapandableListe, pour l'exemple de child.
 
+        Une option rajouté lors d'un autre développement et inséré directement dans cette partie :
+            - expandableColIco
+                src\app\shared\component\worg-table\worg-table.component.html
+                    On ajoute les colonnes optionnel sans aucune données :
+                        ...<th *ngIf="expandableColIco"></th>...
+                    On ajoute la colonnes optionnel principal qui inclura un icone pour l'expandable :
+                        ...
+                        <td *ngIf="expandableColIco">
+                            <!-- Bouton spécifique expandable -->
+                            <div *ngIf="optionsPlus[element['id']]"
+                                [ngClass]="element.isExpand === true ? 'icoExpandableTop' : 'icoExpandableDown'"
+                                (click)="optionsPlus[element['id']] ? expandableAction(element, true, optionInfosPlus) : false"
+                            ></div>
+                        </td>
+                        ...
+                src\app\shared\component\worg-table\worg-table.component.scss
+                    Un peu de css :
+                        ...
+                        .icoExpandableDown{
+                            ...
+                        }
+                        .icoExpandableTop{
+                            ...
+                        }
+                        ...
+                src\app\shared\component\worg-table\worg-table.component.ts
+                    On ajoute l'option au composant principal :
+                        expandableColIco: boolean = false;
+                        ...
+                        this.expandableColIco   = option['options']['expandableColIco'];
+
+                src\app\component\users\users.component.ts
+                    On peut maintenant rajouté l'option dans les paramètres du composant appelé :
+                        ...
+                        'expandableColIco': true,// true : Affiche une colonne spécifique pour le click.
+                        ...
+                    
+
+
 
 ## Problème à résoudre :
     Petit default sur le design...
@@ -98,15 +137,14 @@ v25 - Tableau -> heritage
 ## Update
 
 ## Historique :
-Avant -> v24 - Tableau -> edit - personnalise
-Après -> v26 - ...
+Avant -> v25 - Récupération du dev 25 vers WorganicTabV1
+Après -> WorganicTabV1 | branch ->  
 
 ## Ressource :
     -
 
 ##  A mettre en place :
     - 2024-02-26 | Mise en place d'une option tri par colonne.
-    - 2024-02-26 | Option d'une colonne pas default pour l'expandable (avec icone).
     - 2024-02-26 | Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
     - ...
 

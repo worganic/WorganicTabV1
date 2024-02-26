@@ -115,10 +115,10 @@
                            
                             <tr class="tableRow" [ngClass]="{'trImpaire': isOdd}">
                                 <td *ngIf="expandableColIco">
-                                    <!-- Bouton spécifique expandable -->
-                                    <div *ngIf="optionsPlus[element['id']]"
+                                    <!-- Bouton spécifique expandable *ngIf="optionsPlus[element['id']]" -->
+                                    <div 
                                         [ngClass]="element.isExpand === true ? 'icoExpandableTop' : 'icoExpandableDown'"
-                                        (click)="optionsPlus[element['id']] ? expandableAction(element, true, optionInfosPlus) : false"
+                                        (click)="expandableAction(element, true, optionInfosPlus)"
                                         ></div>
                                 </td>
 
@@ -126,7 +126,6 @@
                                 <td *ngFor="let column of findHiddenFalse(Listecolumns)"
                                     class="row-{{ column.column }} priority-{{ column?.columnPriority }}"
                                     (click)="column.expandable && optionsPlus[element['id']] || expandableCol == false || column.expandable && !expandableIfBo ? expandableAction(element, column.expandable, optionInfosPlus) : false">
-                             
                                     <div *ngIf="column?.dataNoCopy == true && i > 0 && viewData[i-1][column.column] != element[column.column] || i == 0 || column?.dataNoCopy == false || column?.dataNoCopy == null">
                                         <!--<div *ngIf="column.type != 'button'  && editAff != element[primaire] && column.edit == false"  [innerHTML]="element[column.column] | tbPipe:column.column:column.pipe:element | async"></div>-->
                                         <!-- element / pipe   -->
