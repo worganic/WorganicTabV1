@@ -1,6 +1,9 @@
-# WorganicTabV1 / v25 ! Table/Heritage/Nettoyage
+# WorganicTabV1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+
+## Branch :
+    Commit initial (V25 - Table/Heritage/Nettoyage).
 
 ## Date :
     Début : 2024-01
