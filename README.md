@@ -1,4 +1,4 @@
-# WorganicTabV1
+# WorganicTabV1 - https://github.com/worganic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
@@ -9,7 +9,7 @@ Et que ce tableau puisse être configurable et modiable à volonté...
 
 ## Utilisation
 
-Je laisse toute possibilité d'utilisé gratuitement mon composant et de le modifier pour un cadre personnel mais aussi privé...
+Je laisse toute possibilité d'utiliser gratuitement mon composant et de le modifier pour un cadre personnel mais aussi professionel, ce code ne pourra être revendu en tans que tel (hors intégration complète dans un projet).
 
 ## Branch :
 
@@ -150,7 +150,25 @@ v25 - Tableau -> heritage
                         ...
                         'expandableColIco': true,// true : Affiche une colonne spécifique pour le click.
                         ...
-                    
+        Modification du menu un insertion du loadChildren dans le routes (main.ts) principal
+            src\main.ts
+            ...
+             loadChildren: () => import('./app/component/autres/routes').then(module => module.INFOS_ROUTES)
+            ...
+            Ajout des fichiers children pour les routes : 
+            src\app\component\tutos\routes.ts
+            ...
+            export const INFOS_ROUTES_TUTOS: Route[] = [...
+            ...
+            Modification du menu :
+                src\app\app.component.html
+                    <div class="center" >
+                    ...
+                    </div>
+                src\app\app.component.ts
+                    toggleMenu...   
+                    menu...
+                
 ## Problème à résoudre :
 
     - 2023 | Petit default sur le design...
@@ -171,6 +189,7 @@ v25 - Tableau -> heritage
 - 2024-02-26 | Mise en place d'une option tri par colonne.
 - 2024-02-26 | Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
 - 2024-02-28 | Voir si on peux rajouté dans les options le service de récupération des datas afin de supprimé la partie getData() dans le composant mère.
+- 2024-02-28 | Amélioré le design du menu...
 - ...
 
 ## Abouts

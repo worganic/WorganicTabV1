@@ -1,7 +1,7 @@
 import { Component, Injectable } from '@angular/core';
 //import { ExpandedComponent } from '../component/users/expanded/expanded.component';
-import { ChildComponent } from '../component/injected/child/child.component';
-import { Child2Component } from '../component/injected/child2/child2.component';
+import { ChildComponent } from '../component/tutos/injected/child/child.component';
+import { Child2Component } from '../component/tutos/injected/child2/child2.component';
 
 @Injectable({
   providedIn: 'root'

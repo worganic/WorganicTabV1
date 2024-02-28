@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   standalone: true
 })
 export class DesignComponent {
+  ngOnInit(): void {
+    console.log("DesignComponent | ngOnInit" );
+  }
 
 }

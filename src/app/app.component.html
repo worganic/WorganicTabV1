@@ -1,14 +1,32 @@
 <div class="container-app">
     <header>
-      <div class="menu-items">
-        <a class="menu-item" routerLink="/"> Home </a>
-        <a  class="menu-item" routerLink="/design"> Design </a>
-        <a  class="menu-item" routerLink="/users"> Users </a>
-        <a  class="menu-item" routerLink="/abouts"> Abouts </a>
-        <a  class="menu-item" routerLink="/injected"> Injected </a>
-        <a  class="menu-item" routerLink="/multiple"> Multiple </a>
-        <a  class="menu-item" routerLink="/ngbootstrap"> ngBootstrap </a>
+      <div class="center" >
+        <div class="ligne1" >
+          <ul>
+            <li class="menu" [class.is-open]="isMenuOpen">
+              <a class="menu-item" routerLink="/"> Home </a> -
+             <!-- <a class="menu-item" routerLink="/divers/Presentation"> Présentation </a> --->
+              <a class="menu-item" (click)="menu('exemples')"> Exemples </a> -
+              <a class="menu-item" (click)="menu('tutos')"> Tutos </a> -
+              <a class="menu-item" routerLink="/divers/abouts"> Abouts </a> -
+            </li>
+          </ul>
+        </div>
+        <div class="ligne2" *ngIf="menuLigne2=='exemples'">
+          <a class="menu-item" routerLink="/exemples/worgtab/users"> Tab Users </a> -
+          <a class="menu-item" routerLink="/exemples/worgtab/multiple"> Tab Multiple </a>
+        </div>
+        <div class="ligne2" *ngIf="menuLigne2=='tutos'">
+          <a class="menu-item" routerLink="/tutos/design"> Design </a> -
+          <a class="menu-item" routerLink="/tutos/injected"> Injected </a> -
+          <a class="menu-item" routerLink="/tutos/ngbootstrap"> NgBootstrap </a>
+        </div>
+        <div class="ligne2" *ngIf="menuLigne2=='autres'">
+          <a class="menu-item" routerLink="/autres/abouts"> Abouts </a> - 
+          <a class="menu-item" routerLink="/error/alertes"> Design</a> 
+        </div>
       </div>
+
 
       <div class="theme-switcher">
         <label class="switch">

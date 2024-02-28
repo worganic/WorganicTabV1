@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
 import { UsersService } from 'src/app/shared/services/users.service';
 //
 import { WorgTableComponent } from 'src/app/shared/component/worg-table/worg-table.component';
-import { ExpandedComponent } from 'src/app/component/users/expanded/expanded.component';
-import { EditComponent } from 'src/app/component/users/edit/edit.component';
+import { ExpandedComponent } from './expanded/expanded.component';
+import { EditComponent } from './edit/edit.component';
 
 @Component({
   selector: 'app-users',
@@ -55,7 +55,7 @@ export class UsersComponent implements OnInit {
     //
     'infosPlus': null,
     // Liste des imports :
-    'importPipe': import( "src/app/component/users/pipe/pipe"),// Permet d'importer le fichier pipe.ts.
+    'importPipe': import( "./pipe/pipe"),// Permet d'importer le fichier pipe.ts.
     'importExpandable': ExpandedComponent,// Permet d'importer le fichier expanded.ts.
     'importEdit': EditComponent,// Permet d'importer le fichier edit.ts.
   };

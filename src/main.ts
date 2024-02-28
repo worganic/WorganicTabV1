@@ -19,43 +19,29 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-      path: '',
-      loadComponent: () => import("./app/component/home/home.component").then(module => module.HomeComponent)
+    path: '',
+    loadComponent: () => import("./app/component/autres/home/home.component").then(module => module.HomeComponent)
   },
   {
-      path: 'design',
-      loadComponent: () => import("./app/component/design/design.component").then(module => module.DesignComponent)
+    path: 'divers',
+    loadChildren: () => import('./app/component/divers/routes').then(module => module.INFOS_ROUTES)
   },
   {
-      path: 'abouts',
-      loadComponent: () => import("./app/component/abouts/abouts.component").then(module => module.AboutsComponent)
+    path: 'autres',
+    loadChildren: () => import('./app/component/autres/routes').then(module => module.INFOS_ROUTES)
   },
   {
-      path: 'users',
-      loadComponent: () => import("./app/component/users/users.component").then(module => module.UsersComponent)
+    path: 'exemples',
+    loadChildren: () => import('./app/component/exemples/routes').then(module => module.INFOS_ROUTES)
   },
   {
-      path: 'injected',
-      loadComponent: () => import("./app/component/injected/injected.component").then(module => module.InjectedComponent)
-  },
-  {
-    path: 'multiple',
-    loadComponent: () => import("./app/component/multiple/multiple.component").then(module => module.MultipleComponent)
-  },
-  {
-    path: 'ngbootstrap',
-    loadComponent: () => import("./app/component/ngbootstrap/ngbootstrap.component").then(module => module.NgbootstrapComponent)
+    path: 'tutos',
+    loadChildren: () => import('./app/component/tutos/routes').then(module => module.INFOS_ROUTES_TUTOS)
   },
   {
       path: '**',
-      loadComponent: () => import("./app/component/pagenotfound/pagenotfound.component").then(module => module.PagenotfoundComponent)
-  },
- 
- 
-
-
-
-  
+      loadComponent: () => import("./app/component/autres/pagenotfound/pagenotfound.component").then(module => module.PagenotfoundComponent)
+  }
 ];
 
 // DELETE platformBrowserDynamic().bootstrapModule(AppModule)

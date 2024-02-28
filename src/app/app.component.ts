@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { NgFor, NgIf, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterOutlet, RouterLink]
+  imports: [NgFor, NgIf, RouterOutlet, RouterLink]
 })
 export class AppComponent implements OnInit {
 
@@ -42,5 +43,24 @@ export class AppComponent implements OnInit {
       this.isLightTheme ? 'light' : 'dark'
     );
   }
+
+  /**
+   * toggleMenu
+   */
+   isMenuOpen = false;
+   toggleMenu(): void {
+     this.isMenuOpen = !this.isMenuOpen;
+   }
+
+   
+  /**
+   * menu
+   */
+  menuLigne2: string = '';
+  menu(section: string){
+    console.log("AppComponent | menu / section : ", section);
+    this.menuLigne2 = section;
+  }
+
 
 }

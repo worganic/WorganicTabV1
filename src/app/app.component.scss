@@ -20,18 +20,6 @@ $primary-bg-color: #F7B1AB;
     z-index: 5;
   }
 
-  .menu-items {
-    display: flex;
-    gap: 15px;
-
-    .menu-item {
-      display: inline-block;
-      font-size: 20px;
-      color: var(--header-menu-item-color);
-      padding: 0px 15px;
-      cursor: pointer;
-    }
-  }
 
   main {
     margin-top: 80px;
@@ -156,4 +144,42 @@ $primary-bg-color: #F7B1AB;
 .radio-container input[type="radio"]:checked + label {
   background: $primary-bg-color;
   border: 1px solid $form-border-color;
+}
+
+//---------------------------------------
+.center{
+  width:100%;
+  float:left;
+}
+
+.ligne1{
+  font-size:1em;
+  height: 20px;
+}
+.ligne2{
+  font-size:0.8em;
+  text-align: left;
+  margin-left:30px;
+}
+.ligne2 a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu-item {
+  gap: 15px;
+  color: var(--header-menu-item-color);
+  display: inline-block;
+  font-size: 15px;
+  color: var(--header-menu-item-color);
+  padding: 0px 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.menu-item a{
+  color: #000;
+}
+.menu-item a:hover{
+  color: rgb(172, 211, 81);
 }
