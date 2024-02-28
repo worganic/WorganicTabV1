@@ -1,9 +1,11 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/shared/services/users.service';
-import { WorgTableComponent } from 'src/app/shared/component/worg-table/worg-table.component';
 import { Observable, map } from 'rxjs';
 import { CommonModule } from '@angular/common';
+//
+import { UsersService } from 'src/app/shared/services/users.service';
+//
+import { WorgTableComponent } from 'src/app/shared/component/worg-table/worg-table.component';
 import { ExpandedComponent } from 'src/app/component/users/expanded/expanded.component';
 import { EditComponent } from 'src/app/component/users/edit/edit.component';
 
@@ -18,12 +20,13 @@ export class UsersComponent implements OnInit {
 
   @Input() optionRecup!: any[];
 
-  // Données du tableau :
+  // Data renvoyé au composant :
   dataAsync$: Observable<any> | undefined;
 
-  // Options du tableau :
+  // Tableau d'options renvoyé au composant :
   tableOption!: any[];
 
+  // Liste des options :
   options: any = {
     'sectionName': "users",
     'urlParent': "src/app/component/users",
@@ -34,7 +37,7 @@ export class UsersComponent implements OnInit {
     'timerTemps': 60,// Temps du timer (réactualisation des données).
     // Filtre :
     'filtre': false,// Affichage de la ligne filtre.
-    // paginator :
+    // Paginator :
     'paginator': false,// Paginator oui ou non.
     'paginatorPageSize': 5,// Paginator - Nombre d'element par page.
     'paginatorMaxSize': 2,// Paginator -
@@ -58,7 +61,7 @@ export class UsersComponent implements OnInit {
   };
 
   /**
-   * Liste des colonnes et leur options :
+   * Liste des colonnes du tableau et leur options :
    * 
    * column :               Nom du champ.
    * columnTitle :          Titre du champ affiché.
@@ -77,7 +80,6 @@ export class UsersComponent implements OnInit {
    */ 
 
   listeColumns: any[] = [
-    
     {column: 'id',        columnTitle: 'id.',           type:'number', columnHidden: false, columnPriority:'1',             expandable: true                       },
     {column: 'username',  columnTitle: 'Login',         type:'string', columnHidden: false, columnPriority:'3',                               filter: true, filterType: 'text',                                                                                               edit: true},
     {column: 'firstName', columnTitle: 'Prénom',        type:'string', columnHidden: false, columnPriority:'4', pipe: true, expandable: true, filter: true, filterType: 'select', filterSelectData: null, filterSelectDefault: 'All',  filterSelectVide: 'All',               edit: true},
@@ -105,7 +107,7 @@ export class UsersComponent implements OnInit {
    */
   async ngOnInit(): Promise<void> {
 
-    // Liste des options :
+    // Préparation de la liste des options :
     this.tableOption = [{
       options: this.options,// Options.
       service: this._usersService,// Service envoyé à app-worg-table.
@@ -132,7 +134,7 @@ export class UsersComponent implements OnInit {
   }
 
   /**
-   * action pour les retour de l'édit :
+   * Action pour les retour de l'édit du tableau :
    * 
    * @param data 
    */
