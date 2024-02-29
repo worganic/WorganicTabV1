@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  version: 'v11 : On met en place la liste des colonnes à affiché.',
+  version: 'v1',
+  annee: '2023-2024',
+  mail: 'projet@worganic.com',
+  github: 'https://github.com/worganic/',
   timerUser: 20,
 
   timerRooms: 60,

@@ -2,28 +2,33 @@
     <header>
       <div class="center" >
         <div class="ligne1" >
-          <ul>
-            <li class="menu" [class.is-open]="isMenuOpen">
-              <a class="menu-item" routerLink="/"> Home </a> -
+          <ul class="menu">
+            <li [class.is-open]="isMenuOpen">
+              <a class="menu-item" [class]="menuLigne2=='' ? 'menuActive1' : ''" routerLink="/" (click)="menu('')"> Home </a> -
              <!-- <a class="menu-item" routerLink="/divers/Presentation"> Présentation </a> --->
-              <a class="menu-item" (click)="menu('exemples')"> Exemples </a> -
-              <a class="menu-item" (click)="menu('tutos')"> Tutos </a> -
-              <a class="menu-item" routerLink="/divers/abouts"> Abouts </a> -
+              <a class="menu-item" [class]="menuLigne2=='projets' ? 'menuActive1' : ''" (click)="menu('projets')"> Projets </a> -
+              <a class="menu-item" [class]="menuLigne2=='tutos' ? 'menuActive1' : ''" (click)="menu('tutos')"> Tutos </a> -
+              <a class="menu-item" [class]="menuLigne2=='abouts' ? 'menuActive1' : ''" routerLink="/divers/abouts" (click)="menu('abouts')"> Abouts </a> -
             </li>
           </ul>
         </div>
-        <div class="ligne2" *ngIf="menuLigne2=='exemples'">
-          <a class="menu-item" routerLink="/exemples/worgtab/users"> Tab Users </a> -
-          <a class="menu-item" routerLink="/exemples/worgtab/multiple"> Tab Multiple </a>
-        </div>
-        <div class="ligne2" *ngIf="menuLigne2=='tutos'">
-          <a class="menu-item" routerLink="/tutos/design"> Design </a> -
-          <a class="menu-item" routerLink="/tutos/injected"> Injected </a> -
-          <a class="menu-item" routerLink="/tutos/ngbootstrap"> NgBootstrap </a>
-        </div>
-        <div class="ligne2" *ngIf="menuLigne2=='autres'">
-          <a class="menu-item" routerLink="/autres/abouts"> Abouts </a> - 
-          <a class="menu-item" routerLink="/error/alertes"> Design</a> 
+        <div class="ligne2">
+          <div *ngIf="menuLigne2=='projets'">
+            <a class="menu-item" [class]="menuLigne3=='tabUsers' ? 'menuActive' : ''" (click)="menu2('tabUsers')"  routerLink="/projets/worgtab/users"> Tab Users </a> -
+            <a class="menu-item" [class]="menuLigne3=='multiple' ? 'menuActive' : ''" (click)="menu2('multiple')" routerLink="/projets/worgtab/multiple"> Tab Multiple </a>
+          </div>
+          <div *ngIf="menuLigne2=='tutos'">
+            <a class="menu-item" [class]="menuLigne3=='st2' ? 'menuActive' : ''" (click)="menu2('st2')" routerLink="/tutos/st2"> St2-route </a> -
+            <a class="menu-item" [class]="menuLigne3=='st3' ? 'menuActive' : ''" (click)="menu2('st3')" routerLink="/tutos/st3"> St3-Structure </a> -
+            <a class="menu-item" [class]="menuLigne3=='st3' ? 'menuActive' : ''" (click)="menu2('st3')" routerLink="/tutos/st3"> St3-Structure </a> -
+            <a class="menu-item" [class]="menuLigne3=='Design' ? 'menuActive' : ''" (click)="menu2('Design')" routerLink="/tutos/design"> Design </a> -
+            <a class="menu-item" [class]="menuLigne3=='Injected' ? 'menuActive' : ''" (click)="menu2('Injected')" routerLink="/tutos/injected"> Injected </a> -
+            <a class="menu-item" [class]="menuLigne3=='NgBootstrap' ? 'menuActive' : ''" (click)="menu2('NgBootstrap')" routerLink="/tutos/ngbootstrap"> NgBootstrap </a>
+          </div>
+          <div *ngIf="menuLigne2=='autres'">
+            <a class="menu-item" [class]="menuLigne3=='Abouts' ? 'menuActive' : ''" (click)="menu2('Abouts')" routerLink="/autres/abouts"> Abouts </a> - 
+            <a class="menu-item" [class]="menuLigne3=='Design' ? 'menuActive' : ''" (click)="menu2('Design')" routerLink="/error/alertes"> Design</a> 
+          </div>
         </div>
       </div>
 
@@ -45,4 +50,4 @@
       <router-outlet></router-outlet>
     </main>
 </div>
-<div class="footer">@Copyright / {{ version }}</div>
+<div class="footer">@Copyright {{ annee }} | {{ version }} | {{ mail }} | <a href="{{ github }}" target="_blank">gitHub</a></div>

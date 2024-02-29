@@ -31,8 +31,8 @@ const routes: Routes = [
     loadChildren: () => import('./app/component/autres/routes').then(module => module.INFOS_ROUTES)
   },
   {
-    path: 'exemples',
-    loadChildren: () => import('./app/component/exemples/routes').then(module => module.INFOS_ROUTES)
+    path: 'projets',
+    loadChildren: () => import('./app/component/projets/routes').then(module => module.INFOS_ROUTES)
   },
   {
     path: 'tutos',

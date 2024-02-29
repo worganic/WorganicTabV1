@@ -14,6 +14,9 @@ export class AppComponent implements OnInit {
 
   title = 'worganic-tab';
   version: string = '';
+  mail: string = '';
+  github: string = '';
+  annee: string = '';
 
   numbers: Array<number> = [];
   public isLightTheme!: boolean;
@@ -23,6 +26,9 @@ export class AppComponent implements OnInit {
  ngOnInit(): void {
 
     this.version = environment.version;
+    this.mail = environment.mail;
+    this.github = environment.github;
+    this.annee = environment.annee;
 
     // Affichage de plusieurs ligne pour test :
     this.numbers = Array(30).fill(1).map((x,i)=>i);
@@ -62,5 +68,10 @@ export class AppComponent implements OnInit {
     this.menuLigne2 = section;
   }
 
+  menuLigne3: string = '';
+  menu2(section: string){
+    console.log("AppComponent | menu2 / section : ", section);
+    this.menuLigne3 = section;
+  }
 
 }

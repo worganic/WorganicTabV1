@@ -9,7 +9,7 @@ $primary-bg-color: #F7B1AB;
   background-color: var(--main-content-background-color);
 
   header {
-    padding: 20px 30px;
+    padding: 10px 30px;
     background-color: var(--header-background-color);
     border-bottom: 1px solid var(--header-border-color);
     display: flex;
@@ -155,22 +155,27 @@ $primary-bg-color: #F7B1AB;
 .ligne1{
   font-size:1em;
   height: 20px;
+  font-weight: bold;
 }
 .ligne2{
   font-size:0.8em;
   text-align: left;
-  margin-left:30px;
+  height: 20px;
+  color: #000;
 }
 .ligne2 a{
   text-decoration: none;
-  color: #fff;
-  font-weight: bold;
+  color: #000;
 }
 
+.menu{
+  display: flex;              /* Transformation en flexbox */
+  padding:0;                  /* Suppression des marges internes */
+}
+.menu li{
+list-style-type : none;
+}
 .menu-item {
-  gap: 15px;
-  color: var(--header-menu-item-color);
-  display: inline-block;
   font-size: 15px;
   color: var(--header-menu-item-color);
   padding: 0px 15px;
@@ -178,8 +183,18 @@ $primary-bg-color: #F7B1AB;
   text-decoration: none;
 }
 .menu-item a{
-  color: #000;
+  color: #fff;
 }
 .menu-item a:hover{
   color: rgb(172, 211, 81);
+}
+
+.menuActive{
+  font-weight: bold;
+  color: #fff!important;
+}
+
+.menuActive1{
+  font-weight: bold;
+  color: #fff!important;
 }

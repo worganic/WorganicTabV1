@@ -13,12 +13,12 @@ Je laisse toute possibilité d'utiliser gratuitement mon composant et de le modi
 
 ## Branch :
 
-Commit initial (V25 - Table/Heritage/Nettoyage).
+Main -> Commit initial (V25 - Table/Heritage/Nettoyage).
 
 ## Date :
 
 Début : 2024-01
-Fin : 2024-02-26
+Fin : 2024-02-29
 
 ## Version système 
 - Node : 
@@ -51,8 +51,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 > https://github.com/worganic/WorganicTabV1.git
 > npm install
-> cd .\worganic-tab-v25\
-> ng serve
+Terminal 1 :
+    > cd .\worganic-tab\
+    > json-server --watch db.json
+Terminal 2 :
+    > cd .\worganic-tab\
+    > ng serve
 
 ## Project :
 
@@ -168,11 +172,17 @@ v25 - Tableau -> heritage
                 src\app\app.component.ts
                     toggleMenu...   
                     menu...
+
+            Ajout des sections tuto st2 et st2 (et première branch 0001).
+                src\app\component\tutos\routes.ts
+                ...
+                path: 'st2',
+                ...
                 
 ## Problème à résoudre :
 
-    - 2023 | Petit default sur le design...
-    - 2024-02-26 | expandable col option : vérifié si elle s'affiche ou non lorsqu'on n'en à pas besoin (data = vide) :  optionsPlus[element['id']] ? ... : false"
+    - 2023 | Update (worg) => Petit default sur le design...
+    - 2024-02-26 | Update (worg-tab) => expandable col option : vérifié si elle s'affiche ou non lorsqu'on n'en à pas besoin (data = vide) :  optionsPlus[element['id']] ? ... : false"
 
 ## Infos plus :
    
@@ -186,10 +196,13 @@ v25 - Tableau -> heritage
 
 ##  A mettre en place :
 
-- 2024-02-26 | Mise en place d'une option tri par colonne.
-- 2024-02-26 | Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
-- 2024-02-28 | Voir si on peux rajouté dans les options le service de récupération des datas afin de supprimé la partie getData() dans le composant mère.
-- 2024-02-28 | Amélioré le design du menu...
+- Fait - 2024-02-28 -> 2024-02-28 | Update (worg) => Amélioré le design du menu...
+
+- 2024-02-29 | Projet (worg-menu) => Mise en place d'un composant menu permettant de créé un menu automatique horizontal à au moins 2/3 niveaux.
+- 2024-02-26 | Update (worg-tab) => Mise en place d'une option tri par colonne.
+- 2024-02-26 | Update (worg-tab) => Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
+- 2024-02-28 | Update (worg-tab) => Voir si on peux rajouté dans les options le service de récupération des datas afin de supprimé la partie getData() dans le composant mère.
+
 - ...
 
 ## Abouts

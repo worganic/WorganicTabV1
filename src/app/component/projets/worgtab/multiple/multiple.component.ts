@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersComponent } from 'src/app/component/exemples/worgtab/users/users.component';
+import { UsersComponent } from '../users/users.component';
 
 @Component({
   selector: 'app-multiple',
