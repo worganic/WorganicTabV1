@@ -1,35 +1,31 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgFor, NgIf, CommonModule } from '@angular/common';
-
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-worgMenu',
   templateUrl: './worg-menu.component.html',
   styleUrls: ['./worg-menu.component.scss'],
   standalone: true,
-  imports: [
-    NgFor, NgIf, CommonModule,
-  ]
+  imports:  [NgFor, NgIf, RouterOutlet, RouterLink, CommonModule,]
 })
 export class WorgMenuComponent  implements OnInit {
  
   // Récupération des options du tableau :
-  @Input() options!: any[];
+  @Input() menuListe!: any;
  
   nameAff: string = "";
   class: string = "";
   type: string = "text";
 
-
   constructor() {}
 
-
   ngOnInit(): void {
-    console.log("worgMenuComponent | ngOnInit / options : ", this.options);
-    if(this.options){
-      this.nameAff = this.options[0];
-      this.class = this.options[1];
-    }
+    console.log("worgMenuComponent | ngOnInit / menuListe : ", this.menuListe);
+     // Menu :
+ 
+    
   }
 
    /**
@@ -41,20 +37,41 @@ export class WorgMenuComponent  implements OnInit {
    }
 
   /**
-   * menu
+   * menu niveau 0
    */
-  menuLigne2: string = '';
-  menu(section: string){
-    console.log("worgMenuComponent | menu / section : ", section);
-    this.menuLigne2 = section;
+  menuLigne0: string = '';
+  menu0(section: any){
+    console.log("worgMenuComponent | menu0 / section : ", section);
+    this.menuLigne0 = section;
+    this.menuLigne1 = '';
   }
 
   /**
-   * menu
+   * menu niveau 1
    */
-  menuLigne3: string = '';
-  menu2(section: string){
+  menuLigne1: string = '';
+  menu1(section: any){
+    console.log("worgMenuComponent | menu1 / section : ", section);
+    this.menuLigne1 = section;
+  }
+
+  /**
+   * menu niveau 2
+   */
+  menuLigne2: string = '';
+  menu2(section: any){
     console.log("worgMenuComponent | menu2 / section : ", section);
-    this.menuLigne3 = section;
+    this.menuLigne2 = section;
+  }
+
+  typeOf(co: any){
+    return typeof co;
+  }
+
+  /*
+   * This is used to override the default comparator function of keyvalue pipe in angular - https://angular.io/api/common/KeyValuePipe 
+   */
+  asIsOrder() {
+    return 0;
   }
 }

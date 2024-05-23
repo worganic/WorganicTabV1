@@ -1,25 +1,31 @@
 # WorganicTabV1 - https://github.com/worganic/WorganicTabV1/
 
+
+## Branch :
+https://github.com/worganic/WorganicTabV1/tree/branch-0001-Add-menu
+branch-0001-Add-menu -> Mise en place d'un composant menu wor-menu.
+
+
+# Version Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
-## Description
 
+## Description général
 Mise en place d'un composant maitre permettant de créé le plus facilement et rapidement possible un tableau avec un maximum d'option possible (affichage (pipe, expandable...), gestion (edit del...)...).
 Et que ce tableau puisse être configurable et modiable à volonté...
 
-## Utilisation
 
+## Description branch
+Mise en place d'un composant "Menu"
+
+
+## Utilisation
 Je laisse toute possibilité d'utiliser gratuitement mon composant et de le modifier pour un cadre personnel mais aussi professionel, ce code ne pourra être revendu en tans que tel (hors intégration complète dans un projet).
 
-## Branch :
-
-Main -> Commit initial (V25 - Table/Heritage/Nettoyage).
-branch-0001-Add-menu -> Mise en place d'un composant menu wor-menu.
 
 ## Date :
-
 Début : 2024-01
-Fin : 2024-02-29
+Fin : 2024-...
 
 ## Version système 
 - Node : 
@@ -62,30 +68,23 @@ Terminal 2 :
 ## Project :
 
 
-                
 ## Problème à résoudre :
-
-    - 2023 | Update (worg) => Petit default sur le design...
-    - 2024-02-26 | Update (worg-tab) => expandable col option : vérifié si elle s'affiche ou non lorsqu'on n'en à pas besoin (data = vide) :  optionsPlus[element['id']] ? ... : false"
+    - 2024 | worgMenu : Amélioration bootstrap
+    - 2024 | worgMenu : Mise en place menu horizontal (tel).
+    - 2024 | worgMenu : Option type de menu
+    - 2024 | worgMenu : ...
 
 ## Infos plus :
    
 ## Update
 
 ## Historique :
-
 2024-02-26 | Branch Initial -> Récupération du dev 25 vers WorganicTabV1
+2024-02-26 | branche-0001-Add-Menu -> Création d'un composant menu
 
 ## Ressource pour cette branch :
 
 ##  A mettre en place :
-
-- Fait - 2024-02-28 -> 2024-02-28 | Update (worg) => Améliorer le design du menu...
-
-- 2024-02-29 | Projet (worg-menu) => Mise en place d'un composant menu permettant de créé un menu automatique horizontal à au moins 2/3 niveaux.
-- 2024-02-26 | Update (worg-tab) => Mise en place d'une option tri par colonne.
-- 2024-02-26 | Update (worg-tab) => Amélioré le système et mettre en place les signals et faire disparaitre (si possible) "ngOnChanges".
-- 2024-02-28 | Update (worg-tab) => Voir si on peux rajouté dans les options le service de récupération des datas afin de supprimé la partie getData() dans le composant mère.
 
 - ...
 

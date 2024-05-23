@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="title">
+        Composant menu
+      </div>
+    </div>
+  </div>
+
+  <div class="row intro">
+    <div class="inf-intro-title">
+      Branch-0001 - Mise en place d'un composant menu.
+    </div>
+    <div class="inf-intro-github">
+      Lien github : <a href="https://github.com/worganic/WorganicTabV1" target="_blank">https://github.com/worganic/WorganicTabV1</a>
+    </div>
+    <div class="inf-intro-branch">
+      Branch : https://github.com/worganic/WorganicTabV1/tree/branch-0001-Add-menu
+    </div>
+    <div class="inf-intro-github">
+      Date : 2024-02-29
+    </div>
+  </div>
+</div>
+
+<div class="container"  *ngFor="let info of infos2 ">
+  {{ info | json }}jj
+  {{ info["title"] }}jj
+
+  <div class="container"  *ngFor="let info0 of info">
+    {{ info0 | json }}kk
+    <div class="row" *ngIf="info.key=='title'">
+      <div class="col-12 title">
+    
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-5 zone0" >
+       
+        <div *ngIf="info.key=='zone1'"> 
+          {{ info.value | json }}
+          <div *ngFor="let info0 of typeOf(info.value) | keyvalue: asIsOrder; let i=index ">
+            ddff
+            <div  >
+             
+            </div>
+            <textarea class='textareaCode' id="code" name="story" ></textarea>
+            <p class="path"></p>
+          </div>
+         
+        </div>
+       
+      </div>
+
+      <div class="col-7 zone1">
+        <p class="inf-infos"></p>
+      </div>
+  </div>
+
+</div>

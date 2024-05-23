@@ -2,17 +2,80 @@
   <div class="row">
     <div class="col-sm">
       <div class="title">
-        St3Component
+        Création d'un composant menu
       </div>
     </div>
   </div>
-  <div class="row">
-    Branch-0001 - Mise en place des signals
+  <div class="row intro">
+    <div class="inf-intro-title">
+      Branch-0001 - Mise en place d'un composant menu.
+    </div>
+    <div class="inf-intro-github">
+      Lien github : <a href="https://github.com/worganic/WorganicTabV1" target="_blank">https://github.com/worganic/WorganicTabV1</a>
+    </div>
+    <div class="inf-intro-branch">
+      Branch : https://github.com/worganic/WorganicTabV1/tree/branch-0001-Add-menu
+    </div>
+    <div class="inf-intro-github">
+      Date : 2024-02-29
+    </div>
   </div>
   <div class="row">
-    Lien github : <a href="https://github.com/worganic/" target="_blank">https://github.com/worganic/</a>
-  </div>
-  <div class="row">
-    git clone : https://github.com/worganic/
+
+    <p class="inf-title">Création du composant worg-menu</p>
+    <p class="inf-path">src\app\shared\component\worg-menu</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code"></p>
+
+    <p class="inf-title">Déplacement des données de app.component.html vers worg-menu.component.html</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.html</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code"></p>
+
+    <p class="inf-title">Ajout du composant dans app.component.html</p>
+    <p class="inf-path">src\app\app.component.html</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code">app-worg-menu>/app-worg-menu></p>
+
+    <p class="inf-title">Suppression du code obsolete :</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.scss</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.ts</p>
+    <p class="inf-explication">A partir de là, le menu est désormais directement dans le composant worg-menu. 
+      Il faut maintenant créé le menu dans le composant enfant et l'envoyer au composant mère.
+      PS: on n'oublis pas de faire les imports...  
+    </p>
+    <p class="inf-code">import  RouterOutlet, RouterLink  from '/@angular/router';</p>
+
+    <p class="inf-title">Je crait le menu dans le composant fille.</p>
+    <p class="inf-path">src\app\app.component.ts</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code">this.menuListe ...</p>
+    
+    <p class="inf-title">Je récupère le menu dans le composant mère.</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.ts</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code">@Input() menuListe!: any[]; ...</p>
+
+    <p class="inf-title">Je tranforme le fichier html pour créé les boucles qui afficheront le menu.</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.html</p>
+    <p class="inf-explication">Je crait le menu 0 et le menu 1</p>
+    <p class="inf-code">...li *ngFor="let item of menuListe | keyvalue">/li>...</p>
+    
+    <p class="inf-title">Je met à jour le fichier ts pour la gestion des clicks.</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.ts</p>
+    <p class="inf-explication"></p>
+    <p class="inf-code">...menu niveau 0...</p>
+
+    <p class="inf-title">La prochaine étape sera de mettre en place le niveau 3</p>
+
+    <p class="inf-title">Je rajoute la function asIsOrder.</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.ts</p>
+    <p class="inf-explication">Afin de ne pas trié les menus par ordre croissant mais laissé le choix à l'utilisateur, j'ai rajouté cette function.</p>
+    <p class="inf-code">...asIsOrder() ...</p>
+    <p class="inf-path">src\app\shared\component\worg-menu\worg-menu.component.html</p>
+    <p class="inf-code">...let item of menuListe | keyvalue: asIsOrder; let i=index...</p>
+    <p class="inf-ressources"><a href="http://github.com/angular/angular/issues/42490" target="_blank">http://github.com/angular/angular/issues/42490</a></p>
+   
+
   </div>
 </div>
