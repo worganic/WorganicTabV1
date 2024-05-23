@@ -1,0 +1,135 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="title">
+        Composant menu
+      </div>
+    </div>
+  </div>
+
+  <div class="row intro">
+    <div class="inf-intro-title">
+      Branch-0001 - Mise en place d'un composant menu.
+    </div>
+    <div class="inf-intro-github">
+      Lien github : <a href="https://github.com/worganic/WorganicTabV1" target="_blank">https://github.com/worganic/WorganicTabV1</a>
+    </div>
+    <div class="inf-intro-branch">
+      Branch : https://github.com/worganic/WorganicTabV1/tree/branch-0001-Add-menu
+    </div>
+    <div class="inf-intro-github">
+      Date : 2024-02-29
+    </div>
+  </div>
+
+  <div class="row intro">
+    <div class="col-12 title">
+      Utilisation du composant worgMenu :
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 zone0">
+      <textarea class='textareaCode' id="code" name="story" >
+        import { WorgMenuComponent } from 'src/app/shared/component/worg-menu/worg-menu.component';
+        ...
+        imports: [WorgMenuComponent]
+        ...
+        // Tableau menu renvoyé au composant :
+        menuListe: any;
+        ...
+      </textarea>
+      <p class="path">src\app\component\projets\worgMenuExemples\worgMenuExemples.component.ts</p>
+    
+    </div>
+    <div class="col-7 zone1">
+      <p class="inf-explication">Installation.</p>
+      <p class="inf-explication">Mise en place de l'import.</p>
+      <p class="inf-explication">Affichage du composant.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 zone0">
+      <textarea class='textareaCode' id="code" name="story" >
+        <app-worgMenu [menuListe]="menuListe"></app-worgMenu>
+      </textarea>
+      <p class="path">src\app\component\projets\worgMenuExemples\worgMenuExemples.component.html</p>
+    
+    </div>
+    <div class="col-7 zone1">
+      <p class="inf-explication">Affichage du composant dans le html.</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-5 zone0">
+      <textarea class='textareaCode' id="code" name="story" >
+        // Menu :
+    this.menuListe = {
+      'Home': "/projets/worgMenu/worgMenuExemples",
+      'Projets': {
+        'Array': {
+          'Tab users': '/projets/worgMenu/worgMenuExemples',
+          'Tab Multiple': '/projets/worgMenu/worgMenuExemples',
+        },
+        'Menu': {
+          'Menu - Tuto': '/projets/worgMenu/worgMenuExemples',
+          'Menu - Exemples': '/projets/worgMenu/worgMenuExemples',
+        }
+      },
+      'Tutos': {
+        'Divers': {
+          'design': '/projets/worgMenu/worgMenuExemples',
+          'injected': '/projets/worgMenu/worgMenuExemples',
+          'ngbootstrap': '/tutos/ngbootstrap',
+        },
+        'Projet array': {
+          'st2': '/projets/worgMenu/worgMenuExemples',
+          'st3': '/projets/worgMenu/worgMenuExemples',
+          'Signals': '/projets/worgMenu/worgMenuExemples',
+        },
+        'Menu': '/projets/worgMenu/worgMenuExemples',
+      },
+      'Abouts': "/projets/worgMenu/worgMenuExemples",
+    };
+      </textarea>
+      <p class="path">src\app\component\projets\worgMenuExemples\worgMenuExemples.component.ts</p>
+    
+    </div>
+    <div class="col-7 zone1">
+      <p class="inf-explication">- Configuration du menu.</p>
+      <p class="inf-explication"><b>2 possibilités :</b><br/>
+        <u>Lien direct :</u><br/>
+        'Home': "/projets/worgMenu/worgMenuExemples",<br/>
+        <u>Sous menu :</u><br/>
+        'Tutos': &#123;<br/>
+          ...<br/>
+          &#125;<br/>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-5 zone0">
+      <app-worgMenu [menuListe]="menuListe"></app-worgMenu>
+    </div>
+    <div class="col-7 zone1">
+      <p class="inf-explication">Options :</p>
+
+      <p class="inf-explication">Pour changer les couleurs.</p>
+      <textarea class='textareaCode' id="code" name="story" >
+        /* Menu Option color */
+          ::ng-deep .worgMenu .worgMenu-item{
+              color:#0d690f!important;
+          }
+          ::ng-deep .worgMenu .menuActive1{
+              color:#ff0000!important;
+          }
+          ::ng-deep .worgMenu li{
+              color:#b911ae!important;
+          }
+        </textarea>
+        <p class="path">src\app\component\projets\worgMenuExemples\worgMenuExemples.component.scss</p>
+      </div>
+  </div>
+
+</div>

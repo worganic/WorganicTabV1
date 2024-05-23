@@ -35,7 +35,7 @@
       "id": 2,
       "username": "saranjjjj",
       "firstName": "sahra",
-      "lastName": "Labiboche",
+      "lastName": "Labiboche222",
       "country": "england",
       "password": "123",
       "age": 27,
@@ -59,6 +59,19 @@
               "quantitée": 10
             }
           ]
+        }
+      ],
+      "date_0_dateDeb": "2023-08-01",
+      "date_0_dateFin": "2023-08-10",
+      "bloc_0_id": 2,
+      "bloc_0_dateDeb": "2023-08-01",
+      "bloc_0_dateFin": "2023-08-10",
+      "bloc_0_nom": "Nom du bloc 2",
+      "bloc_0_class": [
+        {
+          "id": 222,
+          "nom": "Nom class 222",
+          "quantitée": 10
         }
       ]
     },
@@ -251,53 +264,51 @@
       "id": 12
     }
   ],
-  "blocs": 
-    [
-      {
-        "id": 1,
-        "dateDeb": "2023-08-01",
-        "dateFin": "2023-08-10",
-        "nom": "Nom du bloc 1",
-        "class": 111
-      },
-      {
-        "id": 2,
-        "dateDeb": "2023-08-01",
-        "dateFin": "2023-08-10",
-        "nom": "Nom du bloc 2",
-        "class": 222
-      },
-      {
-        "id": 3,
-        "dateDeb": "2023-08-01",
-        "dateFin": "2023-08-10",
-        "nom": "Nom du bloc 3",
-        "class": 222
-      }
-    ],
-  "class": 
-    [
-      {
-        "id": 111,
-        "nom": "Nom class 111",
-        "quantitée": 111
-      },
-      {
-        "id": 222,
-        "nom": "Nom class 222",
-        "quantitée": 222
-      },
-      {
-        "id": 333,
-        "nom": "Nom class 333",
-        "quantitée": 333
-      },
-      {
-        "id": 444,
-        "nom": "Nom class 444",
-        "quantitée": 444
-      }
-  ], 
+  "blocs": [
+    {
+      "id": 1,
+      "dateDeb": "2023-08-01",
+      "dateFin": "2023-08-10",
+      "nom": "Nom du bloc 1",
+      "class": 111
+    },
+    {
+      "id": 2,
+      "dateDeb": "2023-08-01",
+      "dateFin": "2023-08-10",
+      "nom": "Nom du bloc 2",
+      "class": 222
+    },
+    {
+      "id": 3,
+      "dateDeb": "2023-08-01",
+      "dateFin": "2023-08-10",
+      "nom": "Nom du bloc 3",
+      "class": 222
+    }
+  ],
+  "class": [
+    {
+      "id": 111,
+      "nom": "Nom class 111",
+      "quantitée": 111
+    },
+    {
+      "id": 222,
+      "nom": "Nom class 222",
+      "quantitée": 222
+    },
+    {
+      "id": 333,
+      "nom": "Nom class 333",
+      "quantitée": 333
+    },
+    {
+      "id": 444,
+      "nom": "Nom class 444",
+      "quantitée": 444
+    }
+  ],
   "profiles": [
     {
       "id": 1,

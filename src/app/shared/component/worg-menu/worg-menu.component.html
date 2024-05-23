@@ -1,29 +1,50 @@
-<div class="ligne1" >
-    <ul class="menu">
-      <li [class.is-open]="isMenuOpen">
-        <a class="menu-item" [class]="menuLigne2=='' ? 'menuActive1' : ''" routerLink="/" (click)="menu('')"> Home </a> -
-       <!-- <a class="menu-item" routerLink="/divers/Presentation"> Présentation </a> --->
-        <a class="menu-item" [class]="menuLigne2=='projets' ? 'menuActive1' : ''" (click)="menu('projets')"> Projets </a> -
-        <a class="menu-item" [class]="menuLigne2=='tutos' ? 'menuActive1' : ''" (click)="menu('tutos')"> Tutos </a> -
-        <a class="menu-item" [class]="menuLigne2=='abouts' ? 'menuActive1' : ''" routerLink="/divers/abouts" (click)="menu('abouts')"> Abouts </a> -
-      </li>
-    </ul>
-  </div>
-  <div class="ligne2">
-    <div *ngIf="menuLigne2=='projets'">
-      <a class="menu-item" [class]="menuLigne3=='tabUsers' ? 'menuActive' : ''" (click)="menu2('tabUsers')"  routerLink="/projets/worgtab/users"> Tab Users </a> -
-      <a class="menu-item" [class]="menuLigne3=='multiple' ? 'menuActive' : ''" (click)="menu2('multiple')" routerLink="/projets/worgtab/multiple"> Tab Multiple </a>
-    </div>
-    <div *ngIf="menuLigne2=='tutos'">
-      <a class="menu-item" [class]="menuLigne3=='st2' ? 'menuActive' : ''" (click)="menu2('st2')" routerLink="/tutos/st2"> St2-route </a> -
-      <a class="menu-item" [class]="menuLigne3=='st3' ? 'menuActive' : ''" (click)="menu2('st3')" routerLink="/tutos/st3"> St3-Structure </a> -
-      <a class="menu-item" [class]="menuLigne3=='branch-0001' ? 'menuActive' : ''" (click)="menu2('branch-0001')" routerLink="/tutos/branch-0001"> Les Signals </a> -
-      <a class="menu-item" [class]="menuLigne3=='Design' ? 'menuActive' : ''" (click)="menu2('Design')" routerLink="/tutos/design"> Design </a> -
-      <a class="menu-item" [class]="menuLigne3=='Injected' ? 'menuActive' : ''" (click)="menu2('Injected')" routerLink="/tutos/injected"> Injected </a> -
-      <a class="menu-item" [class]="menuLigne3=='NgBootstrap' ? 'menuActive' : ''" (click)="menu2('NgBootstrap')" routerLink="/tutos/ngbootstrap"> NgBootstrap </a>
-    </div>
-    <div *ngIf="menuLigne2=='autres'">
-      <a class="menu-item" [class]="menuLigne3=='Abouts' ? 'menuActive' : ''" (click)="menu2('Abouts')" routerLink="/autres/abouts"> Abouts </a> - 
-      <a class="menu-item" [class]="menuLigne3=='Design' ? 'menuActive' : ''" (click)="menu2('Design')" routerLink="/error/alertes"> Design</a> 
+<div class="niveau0">
+  <ul class="worgMenu">
+    <li *ngFor="let item of menuListe | keyvalue: asIsOrder; let i=index">
+      <a class="worgMenu-item" *ngIf="typeOf(item.value) == 'string'" [class]="menuLigne0==item.key ? 'menuActive1' : ''"
+        routerLink='{{ item.value }}' (click)="menu0(item.key)">{{ item.key }}</a>
+      <a class="worgMenu-item" *ngIf="typeOf(item.value) == 'object'" [class]="menuLigne0==item.key ? 'menuActive1' : ''"
+        (click)="menu0(item.key)">{{ item.key }}</a> -
+    </li>
+  </ul>
+</div>
+<div class="niveau1">
+  <div *ngFor="let item of menuListe | keyvalue: asIsOrder; let i=index">
+    <div *ngIf="typeOf(item.value) == 'object'">
+      <div *ngIf="menuLigne0==item.key">
+        <ul class="worgMenu">
+          <li *ngFor="let item0 of $any(item).value | keyvalue: asIsOrder; let i=index">
+            <a class="worgMenu-item" *ngIf="typeOf(item0.value) == 'string'"
+              [class]="menuLigne1==item0.key ? 'menuActive1' : ''" routerLink='{{ item0.value }}'
+              (click)="menu1(item0.key)">{{ item0.key }}</a>
+            <a class="worgMenu-item" *ngIf="typeOf(item0.value) == 'object'"
+              [class]="menuLigne1==item0.key ? 'menuActive1' : ''" (click)="menu1(item0.key)">{{ item0.key }}</a> -
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
+<div class="niveau2">
+  <div *ngFor="let item of menuListe | keyvalue: asIsOrder; let i=index">
+    <div *ngIf="typeOf(item.value) == 'object'">
+      <div *ngFor="let item0 of $any(item).value | keyvalue: asIsOrder; let i=index">
+        <div *ngIf="typeOf(item0.value) == 'object'">
+          <div *ngIf="menuLigne1==item0.key">
+            <ul class="worgMenu">
+              <li *ngFor="let item1 of $any(item0).value | keyvalue: asIsOrder; let i=index">
+                <a class="worgMenu-item" *ngIf="typeOf(item1.value) == 'string'"
+                  [class]="menuLigne2==item1.key ? 'menuActive1' : ''" routerLink='{{ item1.value }}'
+                  (click)="menu2(item1.key)">{{ item1.key }}</a>
+                <a class="worgMenu-item" *ngIf="typeOf(item1.value) == 'object'"
+                  [class]="menuLigne2==item1.key ? 'menuActive1' : ''" 
+                  (click)="menu2(item1.key)">{{ item1.key }}</a>
+                -
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

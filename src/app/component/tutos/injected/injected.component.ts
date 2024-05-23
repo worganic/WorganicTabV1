@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewContainerRef, OnInit,} from '@angular/core';
-import { ExpandableService } from 'src/app/component/expandableListe';
+import { ExpandableService } from 'src/app/component/tutos/injected/expandableListe';
 
 @Component({
   selector: 'app-injected',

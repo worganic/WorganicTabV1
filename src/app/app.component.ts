@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { NgFor, NgIf, CommonModule } from '@angular/common';
+import { WorgMenuComponent } from 'src/app/shared/component/worg-menu/worg-menu.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [NgFor, NgIf, RouterOutlet, RouterLink]
+  imports: [NgFor, NgIf, RouterOutlet, RouterLink, WorgMenuComponent]
 })
 export class AppComponent implements OnInit {
 
@@ -17,6 +18,9 @@ export class AppComponent implements OnInit {
   mail: string = '';
   github: string = '';
   annee: string = '';
+
+  // Tableau menu renvoyé au composant :
+  menuListe1: any;
 
   numbers: Array<number> = [];
   public isLightTheme!: boolean;
@@ -39,6 +43,37 @@ export class AppComponent implements OnInit {
     if( th == 'light'){
       this.isLightTheme = true;
     }
+
+    // Menu :
+    this.menuListe1 = {
+      'Home': "",
+      'Projets': {
+        'Array': {
+          'Tuto': '/projets/worgtab/WorgTabTutoComponent',
+          'Exemples : users': '/projets/worgtab/users',
+          'Exemples : Tab Multiple': '/projets/worgtab/multiple',
+        },
+        'Menu': {
+          'Tuto': '/projets/WorgMenuTuto',
+          'Exemples': '/projets/worgMenu/worgMenuExemples',
+          'A faire': '/projets/worgMenu/worgMenuAfaire',
+        }
+      },
+      'Tutos': {
+        'Divers': {
+          'design': '/tutos/design',
+          'injected': '/tutos/injected',
+          'ngbootstrap': '/tutos/ngbootstrap',
+        },
+        'Projet array': {
+          'st2': '/tutos/st2',
+          'st3': '/tutos/st3',
+          'Signals': '/tutos/branch-0002',
+        },
+        'Menu': '/tutos/branch-0001',
+      },
+      'Abouts': "/divers/abouts",
+    };
   }
 
   // Système de changement de style (light/dark) :
@@ -48,30 +83,6 @@ export class AppComponent implements OnInit {
       'data-theme',
       this.isLightTheme ? 'light' : 'dark'
     );
-  }
-
-  /**
-   * toggleMenu
-   */
-   isMenuOpen = false;
-   toggleMenu(): void {
-     this.isMenuOpen = !this.isMenuOpen;
-   }
-
-   
-  /**
-   * menu
-   */
-  menuLigne2: string = '';
-  menu(section: string){
-    console.log("AppComponent | menu / section : ", section);
-    this.menuLigne2 = section;
-  }
-
-  menuLigne3: string = '';
-  menu2(section: string){
-    console.log("AppComponent | menu2 / section : ", section);
-    this.menuLigne3 = section;
   }
 
 }

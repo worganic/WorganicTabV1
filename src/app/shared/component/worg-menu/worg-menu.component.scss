@@ -1,48 +1,55 @@
+.niveau0 {
+  font-size: 1em;
+  height: 20px;
+  font-weight: bold;
+}
 
-.ligne1{
-    font-size:1em;
-    height: 20px;
-    font-weight: bold;
-  }
-  .ligne2{
-    font-size:0.8em;
-    text-align: left;
-    height: 20px;
-    color: #000;
-  }
-  .ligne2 a{
-    text-decoration: none;
-    color: #000;
-  }
-  
-  .menu{
-    display: flex;              /* Transformation en flexbox */
-    padding:0;                  /* Suppression des marges internes */
-  }
-  .menu li{
-  list-style-type : none;
-  }
-  .menu-item {
-    font-size: 15px;
-    color: var(--header-menu-item-color);
-    padding: 0px 15px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .menu-item a{
-    color: #fff;
-  }
-  .menu-item a:hover{
-    color: rgb(172, 211, 81);
-  }
-  
-  .menuActive{
-    font-weight: bold;
-    color: #fff!important;
-  }
-  
-  .menuActive1{
-    font-weight: bold;
-    color: #fff!important;
-  }
-  
+.niveau1 {
+  font-size: 0.8em;
+  text-align: left;
+  height: 20px;
+  color: #000;
+}
+
+.niveau1 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.worgMenu {
+  height: 0px;
+  display: flex;
+  /* Transformation en flexbox */
+  padding: 0;
+  /* Suppression des marges internes */
+}
+
+.worgMenu li {
+  list-style-type: none;
+}
+
+.worgMenu .worgMenu-item {
+  font-size: 15px;
+  color: var(--header-menu-item-color);
+  padding: 0px 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.worgMenu .worgMenu-item a {
+  color: #fff;
+}
+
+.menu-item a:hover {
+  color: rgb(172, 211, 81);
+}
+
+.worgMenu .menuActive {
+  font-weight: bold;
+  color: #fff ;
+}
+
+.worgMenu .menuActive1 {
+  font-weight: bold;
+  color: #fff ;
+}

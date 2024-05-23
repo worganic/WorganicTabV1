@@ -1,0 +1,94 @@
+.intro{
+ margin-top: 20px;
+}
+.inf-intro-title{
+    font-weight: bold;
+}
+.inf-intro-github{
+    
+}
+.inf-intro-branch{
+    
+}
+.inf-intro-date{
+    
+}
+.inf-title{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    list-style-type: circle;
+}
+.inf-path{
+    font-size: 0.8em;
+    margin-bottom: 0px;
+    background-color: #d6d5d5;
+    color:#000;
+    width: auto;
+}
+.inf-explication{
+
+}
+.inf-code{
+    font-size: 0.8em;
+    background-color: #000;
+    color:#fff;
+}
+.inf-ressources{
+    font-size: 0.8em;
+    background-color: #a9c0b0;
+    color:#000;
+    text-align: right;
+}
+.inf-ressources a{
+    color:#000;
+    
+}
+
+
+.intro .title{
+    font-size: 1em;
+    font-weight: bold!important;
+    text-align: left!important;
+    color:#ff0000!important;
+    
+    -webkit-text-fill-color: unset!important;
+}
+
+.zone0{
+    border:1px solid #000;
+    background-color: #efeded;
+    padding: 10px;
+}
+.zone0 p{
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+.zone0 p.path{
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-size: 0.7em;
+    text-align: right;
+    width: 100%;
+    padding-right:10px;
+}
+
+.zone1{
+
+}
+.zone1 p{
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+.zone1 ul{
+    margin-left:10px;
+}
+.textareaCode{
+    width: 100%;
+    height: 200px;
+    font-size: 0.8em;
+    background-color: #a9c0b0;
+    padding: 5px;
+}
